@@ -38,12 +38,12 @@ my $csvPath = '/usr/local/share/request-tracker4/lib/RT/CustomFieldValues/my_cus
 open( my $input_fh, "<", $csvPath ) or die $!;
 my @lines = <$input_fh>;
 
-# admin friendly description, the default valuse is the name of the class
+# admin friendly description, the default value is the name of the class
 sub SourceDescription {
 	return 'Customers';
   }
   
-# actual values provider method
+# current values provider method
 sub ExternalValues {
 
 	foreach (@lines) { push @res, { name => $_, };  }
